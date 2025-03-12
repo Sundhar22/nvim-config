@@ -1,60 +1,56 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
-  version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+  version = false, -- Using latest code changes
   opts = {
     provider = "copilot",
     copilot = {
-      api_key = os.getenv "COPILOT_API_KEY", -- Set this in your environment
-      model = "github-copilot", -- Default Copilot model
-      temperature = 0.7, -- Adjust creativity level (0-1)
+      api_key = os.getenv "COPILOT_API_KEY",
+      -- Change this model to an officially supported one
+      model = "copilot-chat", -- or another supported Copilot model
+      temperature = 0.7,
     },
   },
-  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
-  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for Windows
   dependencies = {
+    -- other dependencies remain the same
     "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    --- The below dependencies are optional,
-    "echasnovski/mini.pick", -- for file_selector provider mini.pick
-    "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    "ibhagwan/fzf-lua", -- for file_selector provider fzf
-    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "echasnovski/mini.pick",
+    "nvim-telescope/telescope.nvim",
+    "hrsh7th/nvim-cmp",
+    "ibhagwan/fzf-lua",
+    "nvim-tree/nvim-web-devicons",
     {
       "zbirenbaum/copilot.lua",
       config = function()
         require("copilot").setup {
-          suggestion = { enabled = true }, -- Disable built-in UI
-          panel = { enabled = true }, -- Disable built-in panel
+          suggestion = { enabled = false },
+          panel = { enabled = false },
           filetypes = {
-            ["*"] = true, -- Enable for all filetypes
+            ["*"] = true,
           },
         }
       end,
     },
     {
-      -- support for image pasting
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",
       opts = {
-        -- recommended settings
         default = {
           embed_image_as_base64 = false,
           prompt_for_file_name = false,
           drag_and_drop = {
             insert_mode = true,
           },
-          -- required for Windows users
           use_absolute_path = true,
         },
       },
     },
     {
-      -- Make sure to set this up properly if you have lazy=true
       "MeanderingProgrammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },

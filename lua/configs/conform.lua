@@ -1,6 +1,6 @@
 local options = {
   formatters_by_ft = {
-    go = { "gofumpt", "goimports-reviser" },
+    go = { "gofumpt", "goimports-reviser", "golines" },
     gomod = { "gofumpt", "goimports-reviser" },
     gowork = { "gofumpt", "goimports-reviser" },
     gotmpl = { "gofumpt", "goimports-reviser" },

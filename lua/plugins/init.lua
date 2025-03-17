@@ -1,4 +1,11 @@
 return {
+  -- #imp: this is lspconfig setup call
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
@@ -14,88 +21,6 @@ return {
       local opts = require "configs.null-ls-config"
       null_ls.setup(opts)
     end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- TypeScript & Next.js Ecosystem
-
-        "typescript-language-server",
-
-        "tailwindcss-language-server",
-
-        "eslint-lsp",
-
-        "prettierd",
-
-        "css-lsp",
-
-        "html-lsp",
-
-        "json-lsp",
-
-        -- React & Next.js Specific
-
-        "react-language-server",
-
-        "prisma-language-server",
-
-        -- Linters and Formatters
-
-        "eslint",
-
-        "stylelint",
-
-        "prettier",
-
-        -- Lua Development
-
-        "lua-language-server",
-
-        "stylua",
-
-        -- Additional Useful Tools
-
-        "node-debug2-adapter",
-
-        "js-debug-adapter",
-      },
-    },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "go",
-        "gomod",
-        "gosum",
-        "gotmpl",
-        "gowork",
-        "prisma",
-      },
-    },
   },
   {
     "okuuva/auto-save.nvim",
@@ -126,9 +51,7 @@ return {
     end,
   },
   {
-
     "eslint/eslint",
-
     config = function()
       local lspconfig = require "lspconfig"
       lspconfig.eslint.setup {
@@ -145,16 +68,9 @@ return {
     end,
   },
   {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      -- "ibhagwan/fzf-lua",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-    },
-    opts = {
-      arg = "leetcode.nvim",
-    },
+    "mfussenegger/nvim-jdtls",
+    ft = "java", -- Load only for Java files
+    dependencies = { "mfussenegger/nvim-dap" }, -- Optional: for debugging support
+    config = function() end,
   },
 }

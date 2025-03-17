@@ -1,12 +1,12 @@
--- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
+-- List of LSP servers (excluding jdtls)
 local servers = { "html", "cssls", "ts_ls", "tailwindcss", "eslint", "gopls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
--- lsps with default config
+-- LSPs with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = nvlsp.on_attach,
@@ -90,3 +90,15 @@ lspconfig.gopls.setup {
     })
   end,
 }
+
+-- Start jdtls for each java file
+local jdtls = require "jdtls"
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    jdtls.start_or_attach(require "configs.java")
+  end,
+})
+
+-- Disable default lspconfig jdtls setup
+lspconfig.jdtls.setup = function() end

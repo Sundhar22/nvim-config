@@ -19,7 +19,7 @@ local options = {
       prepend_args = { "-rm-unused", "-format-enabled" },
     },
     gofumpt = {
-      -- Add any specific gofumpt configurations if needed
+      prepend_args = { "-set-exit-status", "-use-cache" },
     },
   },
 

@@ -1,6 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
+    fold = {
+      enable = true,
+    },
     ensure_installed = {
       "vim",
       "lua",

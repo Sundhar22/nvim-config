@@ -11,3 +11,7 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = true
 opt.foldlevel = 99 -- Set this high to open all folds by default
+
+--relative number
+vim.opt.number = true
+vim.opt.relativenumber = true

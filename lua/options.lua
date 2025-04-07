@@ -15,3 +15,6 @@ opt.foldlevel = 99 -- Set this high to open all folds by default
 --relative number
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.o.wrap = true
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"

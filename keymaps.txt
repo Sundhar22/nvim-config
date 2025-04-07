@@ -1,0 +1,218 @@
+Mode: n
+  <Tab> → 
+  <Esc> → <Cmd>noh<CR>
+   a? → 
+   aR → 
+   as → 
+   ah → 
+   ad → 
+   at → 
+   af → 
+   ar → 
+   aS → 
+   aa → 
+   ts → 
+   wk → 
+   wK → <Cmd>WhichKey <CR>
+   v → 
+   h → 
+   fa → <Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>
+   ff → <Cmd>Telescope find_files<CR>
+   th → 
+   pt → <Cmd>Telescope terms<CR>
+   gt → <Cmd>Telescope git_status<CR>
+   cm → <Cmd>Telescope git_commits<CR>
+   fz → <Cmd>Telescope current_buffer_fuzzy_find<CR>
+   fo → <Cmd>Telescope oldfiles<CR>
+   ma → <Cmd>Telescope marks<CR>
+   fh → <Cmd>Telescope help_tags<CR>
+   fb → <Cmd>Telescope buffers<CR>
+   fw → <Cmd>Telescope live_grep<CR>
+   e → <Cmd>NvimTreeFocus<CR>
+   / → gcc
+   x → 
+   b → <Cmd>enew<CR>
+   ds → 
+   fm → 
+   ch → <Cmd>NvCheatsheet<CR>
+   rn → <Cmd>set rnu!<CR>
+   n → <Cmd>set nu!<CR>
+    → 
+  " → 
+  & → :&&<CR>
+  ' → 
+  ; → :
+  Y → y$
+  [  → 
+  [B → 
+  [b → 
+  [<C-T> → 
+  [T → 
+  [t → 
+  [A → 
+  [a → 
+  [<C-L> → 
+  [L → 
+  [l → 
+  [<C-Q> → 
+  [Q → 
+  [q → 
+  [D → 
+  [d → 
+  ]  → 
+  ]B → 
+  ]b → 
+  ]<C-T> → 
+  ]T → 
+  ]t → 
+  ]A → 
+  ]a → 
+  ]<C-L> → 
+  ]L → 
+  ]l → 
+  ]<C-Q> → 
+  ]Q → 
+  ]q → 
+  ]D → 
+  ]d → 
+  ` → 
+  c → 
+  g → 
+  gO → 
+  gri → 
+  grr → 
+  gra → 
+  grn → 
+  gcc → 
+  gc → 
+  gx → 
+  v → 
+  <Plug>(AvanteSelectModel) → 
+  <Plug>(AvanteConflictPrevConflict) → 
+  <Plug>(AvanteConflictNextConflict) → 
+  <Plug>(AvanteConflictCursor) → 
+  <Plug>(AvanteConflictAllTheirs) → 
+  <Plug>(AvanteConflictTheirs) → 
+  <Plug>(AvanteConflictBoth) → 
+  <Plug>(AvanteConflictOurs) → 
+  <Plug>(AvanteToggleSuggestion) → 
+  <Plug>(AvanteToggleHint) → 
+  <Plug>(AvanteToggleDebug) → 
+  <Plug>(AvanteToggle) → 
+  <Plug>(AvanteBuild) → 
+  <Plug>(AvanteFocus) → 
+  <Plug>(AvanteRefresh) → 
+  <Plug>(AvanteChat) → 
+  <Plug>(AvanteAsk) → 
+  <Plug>luasnip-expand-repeat → 
+  <Plug>luasnip-delete-check → 
+  <M-i> → 
+  <M-h> → 
+  <M-v> → 
+  <C-N> → <Cmd>NvimTreeToggle<CR>
+  <S-Tab> → 
+  <C-C> → <Cmd>%y+<CR>
+  <C-S> → <Cmd>w<CR>
+  <C-K> → <C-W>k
+  <C-J> → <C-W>j
+  <C-H> → <C-W>h
+  <Plug>PlenaryTestFile → :lua require('plenary.test_harness').test_file(vim.fn.expand("%:p"))<CR>
+  <C-W> → 
+  <C-W><C-D> → <C-W>d
+  <C-W>d → 
+  <C-L> → <C-W>l
+
+Mode: i
+  <C-N> → 
+  <C-F> → 
+  <C-P> → 
+  <C-D> → 
+  <C-Space> → 
+  <Plug>luasnip-expand-repeat → 
+  <Plug>luasnip-delete-check → 
+  <Plug>luasnip-jump-prev → 
+  <Plug>luasnip-jump-next → 
+  <Plug>luasnip-prev-choice → 
+  <Plug>luasnip-next-choice → 
+  <Plug>luasnip-expand-snippet → 
+  <Plug>luasnip-expand-or-jump → 
+  <C-X> → <C-O>dd<C-O>P
+  <C-S-K> → <C-O>dd
+  <C-Del> → <C-O>dw
+  <C-BS> → <C-W>
+  <C-K> → <C-O>D
+  <C-J> → <Down>
+  <C-L> → <Right>
+  <C-H> → <C-W>
+  <C-E> → 
+  <C-B> → <Esc>^i
+  <S-Tab> → 
+  <C-S> → 
+  <C-W> → <C-G>u<C-W>
+  <C-U> → <C-G>u<C-U>
+  <Tab> → 
+  <CR> → 
+  jj → <Esc>
+
+Mode: v
+  <Tab> → 
+   ae → 
+   aa → 
+   / → gc
+  # → 
+  * → 
+  @ → mode() ==# 'V' ? ':normal! @'.getcharstr().'<CR>' : '@'
+  Q → mode() ==# 'V' ? ':normal! @<C-R>=reg_recorded()<CR><CR>' : 'Q'
+  gra → 
+  gc → 
+  gx → 
+  <Plug>(AvanteConflictCursor) → 
+  <Plug>(AvanteConflictAllTheirs) → 
+  <Plug>(AvanteConflictTheirs) → 
+  <Plug>(AvanteConflictBoth) → 
+  <Plug>(AvanteConflictOurs) → 
+  <Plug>(AvanteEdit) → 
+  <Plug>(AvanteChat) → 
+  <Plug>(AvanteAsk) → 
+  <Plug>luasnip-jump-prev → 
+  <Plug>luasnip-jump-next → 
+  <Plug>luasnip-prev-choice → 
+  <Plug>luasnip-next-choice → 
+  <Plug>luasnip-expand-snippet → 
+  <Plug>luasnip-expand-or-jump → 
+  <Plug>luasnip-expand-repeat → 
+  <S-Tab> → 
+  <C-S> → 
+
+Mode: x
+   ae → 
+   aa → 
+   / → gc
+  # → 
+  * → 
+  @ → mode() ==# 'V' ? ':normal! @'.getcharstr().'<CR>' : '@'
+  Q → mode() ==# 'V' ? ':normal! @<C-R>=reg_recorded()<CR><CR>' : 'Q'
+  gra → 
+  gc → 
+  gx → 
+  <Plug>(AvanteConflictCursor) → 
+  <Plug>(AvanteConflictAllTheirs) → 
+  <Plug>(AvanteConflictTheirs) → 
+  <Plug>(AvanteConflictBoth) → 
+  <Plug>(AvanteConflictOurs) → 
+  <Plug>(AvanteEdit) → 
+  <Plug>(AvanteChat) → 
+  <Plug>(AvanteAsk) → 
+  <Plug>luasnip-expand-repeat → 
+
+Mode: c
+  <Plug>luasnip-expand-repeat → 
+  <Plug>luasnip-delete-check → 
+  <Plug>(TelescopeFuzzyCommandSearch) → <C-\>e "lua require('telescope.builtin').command_history { default_text = [=[" . escape(getcmdline(), '"') . "]=] }"<CR><CR>
+
+Mode: t
+  <M-i> → 
+  <M-h> → 
+  <M-v> → 
+  <C-X> → <C-\><C-N>
+
